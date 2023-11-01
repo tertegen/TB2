@@ -1,0 +1,80 @@
+Feature: US01 - Registro del usuario
+Como usuario no registrado en la aplicacion
+Quiero crearme una cuenta para acceder a todas las funcionalidades de la aplicacion 
+Para poder gestionar mis datos y ver mi estado de salud actual
+
+Scenario: E1: Registro correcto
+Given el <usuario> se encuentra en la pantalla de registro
+When el <usuario> ingresa sus datos personales 
+And el <usuario> presiona el boton de registro
+Then la aplicacion muestra un mensaje de "registrado" 
+
+Feature: US02 - Busqueda de terapista
+Como paciente quiero encontrar una terapista que se adecue a mis necesidades 
+Para que ayude con mi enfermedad 
+
+Scenario: E2: Selecionar terapista
+Given el <usuario> se encuentra en la seccion de busqueda
+And selecciona la opcion <terapista> en filtros de busqueda
+When selecciona a una <terapista>
+Then la aplicacion lo dirige al perfil de la terapista
+
+
+Scenario: E3: Progamar cita
+Given el <usuario> se encuentra en la seccion de reservas
+When  el <usuario> describe sus sintomas
+And seleciona la "fecha" de la cita
+Then le llegara una notificacion de que su cita ah sido confirmada
+
+Feature: US03 - Acceso a los foros
+Como usuario quiero poder acceder a los foros de consulta de la aplicacion 
+Para poder ver y consultar las preguntas que tenga
+
+Scenerio: E4: Publicar consulta
+Given el <usuario> se encuentra en el landing page
+And hace "click" en foros y consulta
+When el <usuario> comenta la duda o consulta en el foro
+And hace "click" en publicar
+Then la aplicacion le mostrara su publicacion en la pantalla.
+
+Feature: US04 - Acceso a los recursos
+Como usurio quiero poder acceder a los recursos de la aplicacion 
+Para poder acceder a los distintos materiales  y articulos relacionados sobre salud mental
+
+Scenario: E5: Ver articulos
+Given el <usuario> se encuentra en el landing page
+And hace "click" en recursos 
+When el <usuario> selecione la opcion de articulos
+Then la aplicacion le mostrara la gran variedad de articulos que ofrece sobre salud mental
+
+
+Feature: US05 - Privacidad y seguridad
+Como usuario quiero acceder a la configuracion de mi perfil
+Para acceder a mis datos personales de manera segura
+
+Scenario: E6: Modificar perfil
+Given el <usuario>  se encuentra en el landing page
+And hace "click" en mi perfil
+When en la pantalla se visualizara su perfil
+And hace click en "modificar perfil"
+Then el <usuario> podra modificar sus datos personales y su foto
+
+
+Feature: US06 - Tutorial de MindTech
+Como usuario quiero ver un tutorial sobre como utilizar la aplicacion
+Para hacer uso sus funcionalidades como el chatbot 
+
+Scenario: E7: Introduccion a la aplicacion
+Given el <usuario> termina su registro en la aplicacion
+And en la pantalla aparece un video tutorial
+When el <usuario> hace "click" en el video tutorial
+Then el video se reproduce de manera automica mostrandole todo lo que incluye la aplicacion 
+
+Scenario: E8: Conversar con el chatbot
+Given el <usuario> se encuentra el el landing page
+And hace "click" en la opcion de chatbot
+When el <usuario> empieza la conversacion con el chatbot
+Then el chatbot respondera de manera inmediata a su consulta
+
+
+
